@@ -1,0 +1,36 @@
+.jumbotron {
+    background-color:#ff1a1a;
+	color: #ffffff;
+	padding: 100px 25px;
+	font-family: sans-serif;
+	text-align: center
+}
+.container-fluid {
+     padding: 40px 50px;
+}
+.bg-grey {
+     background-color: #DCDCDC; 
+}
+.panel {
+    border: 1px solid #EDC45B;
+}
+.panel: hover {
+    box-shadow: 3px 7px 30px #008000;
+}
+.equipo .panel-heading {
+    color: #fff;
+    background-color: #F7780F;
+    padding: 25px;
+    border-bottom: 1px solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.panel-footer {
+    background-color: #EDC45B;
+}
+.panel-footer h4 {
+    color: #0C32F5;
+    font-size: 15px;
+}
