@@ -228,5 +228,93 @@
 				</div>
 			</div>
 		</div>	
-	</section>	
+	</section>
+		<!--Sección contacto -->
+		<section id="contacto" class="container-fluid bg-grey">
+			<h2 class="text-center">CONTACTO</h2>
+			<div class="row">
+				<div class="col-sm-5">
+				   <h4>Información de contacto:</h4>
+				   <p><span class="glyphicon glyphicon-home"></span> Centro Comercial Metrocentro Santa Ana, local 103-B Ciudad y Depto. Santa Ana</p>
+					<p><span class="glyphicon glyphicon-phone"></span> 2444-8888</p>
+					<p><span class="glyphicon glyphicon-envelope"></span> mundodeportivotpi@gmail.com</p>
+				   </div>
+				<div class="col-sm-7">
+					<form>
+						<div class="row">
+							<div class="col-sm-6 form-group">
+							<input class="form-control" name="name" placeholder="Nombre" type="text" required>
+							</div>
+							<div class="col-sm-6 form-group">
+							<input class="form-control" name="email" placeholder="E-mail" type="email" required>
+							</div>
+						</div>	
+							<textarea class="form-control" name="pregunta" placeholder="Pregunta" rows="4"></textarea><br>
+						<div class="row">
+							<div class="col-sm-12 form-group">
+						<button class="btn btn-default pull-right" type="submit">Enviar</button>							
+							</div>
+						</div>	
+					</div>	
+				</form>	
+				</div>
+		</section>
+		<!--Seccion Mapas-->
+		<section class="container-fluid">
+			<h3>Nuestra Ubicacion</h3>
+			<div class="row">
+				<div class="col-sm-12">
+				<!-- Asignar alto y ancho con CSS -->
+				<div id="googleMap" style="height:400px;width:100%;"></div>
+				<!-- Agregar Google Maps -->
+				<script src="http://maps.googleapis.com/maps/api/js"></script>
+				<script>
+					var myCenter = new google.maps.LatLng(13.97741141362428, -89.56185194376953);
+					function initialize() {
+						var mapProp = {
+						center:myCenter,
+						zoom:12,
+						scrollwheel:false,
+						draggable:false,
+						mapTypeId:google.maps.MapTypeId.ROADMAP
+					};
+					var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+					var marker = new google.maps.Marker({
+						position:myCenter,
+					});
+					marker.setMap(map);
+					}
+					google.maps.event.addDomListener(window, 'load', initialize);
+				</script>
+				</div>
+			</div>
+		</section>
+		<!--Pie de página-->
+		<footer class="container-fluid text-center">
+			<a href="index.html" title="Ir al inicio">
+				<span class="glyphicon glyphicon-home"></span>
+			</a>
+			</footer>
+		<!--Script para añadir desplazamiento suave-->
+		<script>
+			$(document).ready(function(){
+				// Agrega desplazamiento suave a anclas en barra de navegación y pie.
+			$(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+				// Removiendo comportamiento por defecto.
+				event.preventDefault();
+				// Almacenando el contenedor destino.
+				var hash = this.hash;
+				// Agregando desplazamiento suave.
+				// El 900 son los milisegundos para moverse.
+				$('html, body').animate({
+					// Moviendo sitio a contenedor destino.
+					scrollTop: $(hash).offset().top
+				}, 900, function(){
+					// Añade el ancla a la dirección.
+					window.location.hash = hash;
+					});
+				});
+			})
+		</script>
+	</body>	
 </html>
